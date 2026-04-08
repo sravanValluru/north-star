@@ -9,7 +9,6 @@ import { SectionContainer } from "@/components/layout/SectionContainer";
 import { PinnedSection } from "@/components/layout/PinnedSection";
 import { useProblemTimeline } from "@/components/motion/useProblemTimeline";
 import { useReducedMotion } from "@/components/motion/useReducedMotion";
-import { SoftInfoCard } from "@/components/ui/SoftInfoCard";
 import { sectionContent } from "@/content/sectionContent";
 
 export function ProblemSection() {
@@ -33,17 +32,23 @@ export function ProblemSection() {
 
   return (
     <SectionContainer id="problem" ref={sectionRef} className="min-h-screen">
-      <PinnedSection className="rounded-[36px] border border-white/70 bg-white/55 p-6 shadow-soft backdrop-blur-[2px] sm:p-8 lg:p-10">
+      <PinnedSection className="rounded-[36px] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.5),rgba(236,242,239,0.46))] p-6 shadow-soft backdrop-blur-[4px] sm:p-8 lg:p-10">
         <div ref={trackRef} className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div className="grid gap-4">
+          <div className="grid gap-5">
             {sectionContent.problem.lines.map((line, index) => (
               <div key={line} ref={statementRefs[index]}>
-                <SoftInfoCard>{line}</SoftInfoCard>
+                <p
+                  className={`max-w-[16ch] text-[clamp(1.8rem,4vw,3.5rem)] font-medium leading-[1.04] tracking-[-0.045em] text-text ${
+                    index === 1 ? "max-w-[12ch]" : ""
+                  } ${index === 3 ? "text-[clamp(1.55rem,3.1vw,2.55rem)] text-muted" : ""}`}
+                >
+                  {line}
+                </p>
               </div>
             ))}
           </div>
           <div ref={phoneRef} className="hidden lg:block">
-            <PhoneMockup className="max-w-[350px] opacity-70">
+            <PhoneMockup className="max-w-[350px] opacity-75">
               <PhoneScreenStage>
                 <PhoneAppScreen state="neutral" />
               </PhoneScreenStage>

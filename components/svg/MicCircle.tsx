@@ -1,14 +1,17 @@
 type MicCircleProps = {
   fill?: string;
   stroke?: string;
+  halo?: string;
 };
 
 export function MicCircle({
   fill = "#F3F4F6",
   stroke = "#D1D5DB",
+  halo = "rgba(214,214,214,0.18)",
 }: MicCircleProps) {
   return (
     <g id="mic-circle">
+      <circle cx="187.5" cy="330" r="95" fill={halo} opacity="0.9" />
       <circle
         cx="187.5"
         cy="330"

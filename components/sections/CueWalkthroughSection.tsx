@@ -31,9 +31,9 @@ export function CueWalkthroughSection() {
 
   return (
     <SectionContainer id="cue-walkthrough" ref={sectionRef}>
-      <div className="rounded-[36px] border border-white/70 bg-white/60 p-6 shadow-soft backdrop-blur-[2px] sm:p-8 lg:p-10">
+      <div className="rounded-[36px] border border-white/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.62),rgba(239,246,250,0.76)_34%,rgba(247,241,232,0.78)_68%,rgba(236,247,244,0.78))] p-6 shadow-soft backdrop-blur-[4px] sm:p-8 lg:p-10">
         <div className="hidden min-h-[78vh] lg:grid lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-10">
-          <div className="rounded-[32px] border border-border bg-[#FBFAF8] p-6">
+          <div className="rounded-[32px] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.8),rgba(247,250,251,0.86))] p-6">
             <div className="mx-auto max-w-[330px]">
               <PhoneMockup>
                 <PhoneScreenStage className="relative">
@@ -77,12 +77,14 @@ export function CueWalkthroughSection() {
           {cueStates.map((state) => (
             <article
               key={state.id}
-              className="rounded-[30px] border border-border bg-[#FCFCFB] p-8"
+              className="rounded-[30px] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(252,252,251,0.94))] p-8"
             >
-              <div className="mb-6 overflow-hidden rounded-[26px] border border-border bg-white">
-                <PhoneScreenStage>
-                  <PhoneAppScreen state={state.id} />
-                </PhoneScreenStage>
+              <div className="mb-8">
+                <PhoneMockup className="max-w-[290px]">
+                  <PhoneScreenStage>
+                    <PhoneAppScreen state={state.id} />
+                  </PhoneScreenStage>
+                </PhoneMockup>
               </div>
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-micro">
                 {state.label}

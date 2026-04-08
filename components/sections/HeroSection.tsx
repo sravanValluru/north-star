@@ -45,7 +45,10 @@ export function HeroSection() {
           </SectionHeadline>
           <SectionSubtext ref={subtextRef}>{section.subtext}</SectionSubtext>
         </div>
-        <PhoneMockup ref={phoneRef} className="lg:translate-y-2">
+        <PhoneMockup
+          ref={phoneRef}
+          className="lg:translate-y-2 before:absolute before:inset-0 before:-z-10 before:rounded-[46px] before:bg-[radial-gradient(circle_at_20%_20%,rgba(191,215,234,0.26),transparent_40%),radial-gradient(circle_at_80%_75%,rgba(230,199,156,0.22),transparent_44%)]"
+        >
           <PhoneScreenStage>
             <PhoneAppScreen state="ready" />
           </PhoneScreenStage>

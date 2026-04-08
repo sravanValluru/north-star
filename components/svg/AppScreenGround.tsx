@@ -8,9 +8,15 @@ export function AppScreenGround() {
     <BaseScreenLayout
       contextText="Regulation may be needed first"
       bottomText="Sustained activation detected"
+      accent="#E6C79C"
+      accentGlow="rgba(230,199,156,0.3)"
     >
-      <WaveformLayer variant="slow-rings" color="#E6C79C" opacity={0.3} />
-      <MicCircle fill="#FAF3E8" stroke="#EBD6B8" />
+      <WaveformLayer variant="slow-rings" color="#E6C79C" opacity={0.36} />
+      <MicCircle
+        fill="#FAF3E8"
+        stroke="#EBD6B8"
+        halo="rgba(230,199,156,0.22)"
+      />
       <CueChip label="GROUND" background="#F6E9D7" textColor="#A6792D" />
     </BaseScreenLayout>
   );

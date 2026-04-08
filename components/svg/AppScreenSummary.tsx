@@ -11,6 +11,8 @@ export function AppScreenSummary() {
     <BaseScreenLayout
       contextText="Session Summary"
       bottomText="Post-session reflection"
+      accent="#BFD7EA"
+      accentGlow="rgba(191,215,234,0.18)"
     >
       <g id="summary-block">
         <text

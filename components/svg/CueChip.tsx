@@ -7,7 +7,15 @@ type CueChipProps = {
 export function CueChip({ label, background, textColor }: CueChipProps) {
   return (
     <g id={`cue-chip-${label.toLowerCase()}`} transform="translate(122 450)">
-      <rect x="0" y="0" width="131" height="36" rx="18" fill={background} />
+      <rect
+        x="0"
+        y="0"
+        width="131"
+        height="36"
+        rx="18"
+        fill={background}
+        stroke="rgba(255,255,255,0.75)"
+      />
       <text
         x="65.5"
         y="23"

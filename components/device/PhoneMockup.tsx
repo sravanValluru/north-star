@@ -12,7 +12,7 @@ export const PhoneMockup = forwardRef<HTMLDivElement, PhoneMockupProps>(
       <div
         ref={ref}
         className={cn(
-          "mx-auto w-full max-w-[390px] rounded-[42px] border border-[#DADADA] bg-[#FCFBF9] p-[14px] shadow-ambient",
+          "relative mx-auto w-full max-w-[390px] rounded-[42px] border border-[#DADADA] bg-[#FCFBF9] p-[14px] shadow-ambient",
           className,
         )}
       >

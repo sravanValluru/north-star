@@ -6,8 +6,10 @@ export function AppScreenReady() {
     <BaseScreenLayout
       contextText="Tap to start listening"
       bottomText="System inactive"
+      accent="#D6D6D6"
+      accentGlow="rgba(214,214,214,0.24)"
     >
-      <MicCircle />
+      <MicCircle halo="rgba(214,214,214,0.24)" />
     </BaseScreenLayout>
   );
 }

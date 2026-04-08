@@ -49,10 +49,11 @@ body::before {
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(circle at 14% 14%, rgba(230, 199, 156, 0.18), transparent 32%),
-    radial-gradient(circle at 86% 18%, rgba(191, 215, 234, 0.18), transparent 34%),
-    radial-gradient(circle at 52% 84%, rgba(183, 227, 214, 0.18), transparent 38%),
-    linear-gradient(180deg, #faf9f7 0%, #f7f5f1 48%, #f3f2ef 100%);
+    radial-gradient(circle at 12% 12%, rgba(230, 199, 156, 0.34), transparent 28%),
+    radial-gradient(circle at 84% 14%, rgba(191, 215, 234, 0.34), transparent 30%),
+    radial-gradient(circle at 82% 62%, rgba(183, 227, 214, 0.3), transparent 28%),
+    radial-gradient(circle at 18% 76%, rgba(214, 214, 214, 0.22), transparent 24%),
+    linear-gradient(180deg, #f8f3ed 0%, #f7f5ef 34%, #f2f2ed 68%, #edf1ee 100%);
 }
 
 body::after {
@@ -61,8 +62,9 @@ body::after {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(120deg, rgba(255, 255, 255, 0.45), transparent 36%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent 45%);
+    linear-gradient(120deg, rgba(255, 255, 255, 0.42), transparent 32%),
+    radial-gradient(circle at 50% 24%, rgba(255, 255, 255, 0.28), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), transparent 45%);
   pointer-events: none;
 }
 

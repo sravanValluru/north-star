@@ -8,9 +8,15 @@ export function AppScreenValidate() {
     <BaseScreenLayout
       contextText="A moment that may need acknowledgment"
       bottomText="Sustained vocal intensity change detected"
+      accent="#BFD7EA"
+      accentGlow="rgba(191,215,234,0.28)"
     >
-      <WaveformLayer variant="rings" color="#BFD7EA" opacity={0.28} />
-      <MicCircle fill="#EEF6FB" stroke="#D7E7F2" />
+      <WaveformLayer variant="rings" color="#BFD7EA" opacity={0.34} />
+      <MicCircle
+        fill="#EEF6FB"
+        stroke="#D7E7F2"
+        halo="rgba(191,215,234,0.2)"
+      />
       <CueChip label="VALIDATE" background="#EAF3FA" textColor="#5A8FB5" />
     </BaseScreenLayout>
   );
