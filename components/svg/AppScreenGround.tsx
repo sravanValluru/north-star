@@ -13,6 +13,7 @@ export function AppScreenGround() {
       accentGlow="rgba(230,199,156,0.3)"
       sessionState="Cue"
       sessionStateText="Activation remains elevated"
+      modeLabel="Mode: Ground"
       primaryActionLabel="Stop session"
       secondaryActionLabel="Mute"
     >
@@ -22,6 +23,8 @@ export function AppScreenGround() {
         stroke="#EBD6B8"
         halo="rgba(230,199,156,0.22)"
         innerLabel="Steady"
+        iconStroke="#9E7B3D"
+        labelColor="#A27B42"
       />
       <CueChip label="GROUND" background="#F6E9D7" textColor="#A6792D" />
     </BaseScreenLayout>

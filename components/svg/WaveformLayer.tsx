@@ -19,6 +19,14 @@ export function WaveformLayer({
     return (
       <g id="waveform-layer" opacity={opacity}>
         <path
+          d="M 104 316 C 124 302 139 332 156 316 S 187 300 204 316 S 236 332 254 316 S 286 302 304 316"
+          fill="none"
+          stroke={color}
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          opacity="0.52"
+        />
+        <path
           d="M 115 332 C 132 316 143 348 158 332 S 184 316 199 332 S 224 348 242 332 S 269 316 287 332"
           fill="none"
           stroke={color}
@@ -41,7 +49,7 @@ export function WaveformLayer({
       <circle
         cx="187.5"
         cy="330"
-        r={variant === "slow-rings" ? "88" : "84"}
+        r={variant === "slow-rings" ? "92" : "88"}
         fill="none"
         stroke={color}
         strokeWidth={variant === "slow-rings" ? "3" : "2"}
@@ -49,7 +57,7 @@ export function WaveformLayer({
       <circle
         cx="187.5"
         cy="330"
-        r={variant === "slow-rings" ? "114" : "108"}
+        r={variant === "slow-rings" ? "118" : "112"}
         fill="none"
         stroke={color}
         strokeWidth={variant === "slow-rings" ? "2.5" : "2"}
@@ -57,11 +65,20 @@ export function WaveformLayer({
       <circle
         cx="187.5"
         cy="330"
-        r={variant === "slow-rings" ? "138" : "132"}
+        r={variant === "slow-rings" ? "144" : "138"}
         fill="none"
         stroke={color}
         strokeWidth="1.5"
         opacity="0.8"
+      />
+      <circle
+        cx="187.5"
+        cy="330"
+        r={variant === "slow-rings" ? "66" : "62"}
+        fill="none"
+        stroke={color}
+        strokeWidth="1.1"
+        opacity="0.38"
       />
     </g>
   );

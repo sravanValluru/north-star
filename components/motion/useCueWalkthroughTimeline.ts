@@ -46,7 +46,7 @@ export function useCueWalkthroughTimeline({
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top top",
-            end: "+=2600",
+            end: "+=3000",
             pin: true,
             scrub: 1,
             anticipatePin: 1,
@@ -62,7 +62,7 @@ export function useCueWalkthroughTimeline({
                 duration: 0.7,
                 ease: "power2.out",
               },
-              "+=0.35",
+              "+=0.5",
             )
             .fromTo(
               screens[index],

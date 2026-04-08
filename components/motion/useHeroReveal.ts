@@ -63,12 +63,15 @@ export function useHeroReveal({
       }
 
       const blobSettings = [
-        { x: 72, y: -46, scale: 1.18, duration: 11.5 },
-        { x: -54, y: 34, scale: 1.12, duration: 14 },
-        { x: 84, y: -28, scale: 1.16, duration: 15.5 },
-        { x: -42, y: -36, scale: 1.1, duration: 12.5 },
-        { x: 58, y: 24, scale: 1.14, duration: 13.5 },
+        { xRange: [-70, 180], yRange: [-55, 45], scaleRange: [1.02, 1.24], durationRange: [9, 13] },
+        { xRange: [-150, 45], yRange: [-35, 65], scaleRange: [1, 1.18], durationRange: [10, 14] },
+        { xRange: [-20, 190], yRange: [-30, 72], scaleRange: [1.04, 1.22], durationRange: [9, 12.5] },
+        { xRange: [-135, 30], yRange: [-68, 28], scaleRange: [1, 1.16], durationRange: [9.5, 13.5] },
+        { xRange: [-55, 145], yRange: [-48, 58], scaleRange: [1.02, 1.2], durationRange: [10, 13] },
       ] as const;
+
+      const randomInRange = ([min, max]: readonly [number, number]) =>
+        gsap.utils.random(min, max, 1);
 
       blobRefs.forEach((blobRef, index) => {
         if (!blobRef.current) {
@@ -76,16 +79,21 @@ export function useHeroReveal({
         }
 
         const settings = blobSettings[index % blobSettings.length];
+        const node = blobRef.current;
 
-        gsap.to(blobRef.current, {
-          x: settings.x,
-          y: settings.y,
-          scale: settings.scale,
-          duration: settings.duration,
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-        });
+        const driftBlob = () => {
+          gsap.to(node, {
+            x: randomInRange(settings.xRange),
+            y: randomInRange(settings.yRange),
+            scale: randomInRange(settings.scaleRange),
+            duration: randomInRange(settings.durationRange),
+            ease: "sine.inOut",
+            onComplete: driftBlob,
+          });
+        };
+
+        gsap.set(node, { x: 0, y: 0, scale: 1 });
+        driftBlob();
       });
     }, sectionRef);
 

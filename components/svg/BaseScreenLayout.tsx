@@ -11,6 +11,7 @@ type BaseScreenLayoutProps = {
   sessionStateText: string;
   primaryActionLabel: string;
   secondaryActionLabel?: string;
+  modeLabel?: string;
 };
 
 export function BaseScreenLayout({
@@ -24,6 +25,7 @@ export function BaseScreenLayout({
   sessionStateText,
   primaryActionLabel,
   secondaryActionLabel = "Mute",
+  modeLabel = "Session live",
 }: BaseScreenLayoutProps) {
   return (
     <svg
@@ -50,28 +52,28 @@ export function BaseScreenLayout({
         </linearGradient>
       </defs>
       <TopLabel />
-      <g transform="translate(32 86)">
+      <g transform="translate(32 84)">
         <rect
           x="0"
           y="0"
-          width="96"
-          height="28"
-          rx="14"
+          width="110"
+          height="30"
+          rx="15"
           fill="rgba(255,255,255,0.9)"
           stroke="rgba(221,226,232,0.95)"
         />
-        <circle cx="16" cy="14" r="4" fill={accent} />
-        <text x="28" y="18" fontSize="12" fill="#667181" fontWeight="500">
+        <circle cx="18" cy="15" r="4" fill={accent} />
+        <text x="31" y="19" fontSize="12.5" fill="#596573" fontWeight="600">
           {sessionState}
         </text>
       </g>
-      <g transform="translate(299 84)">
+      <g transform="translate(297 82)">
         <rect
           x="0"
           y="0"
-          width="44"
-          height="32"
-          rx="16"
+          width="46"
+          height="34"
+          rx="17"
           fill="rgba(255,255,255,0.9)"
           stroke="rgba(221,226,232,0.95)"
         />
@@ -100,14 +102,33 @@ export function BaseScreenLayout({
           strokeLinecap="round"
         />
       </g>
+      <text
+        x="187.5"
+        y="125"
+        textAnchor="middle"
+        fontSize="12.5"
+        fill="#8B96A3"
+        fontWeight="500"
+      >
+        {modeLabel}
+      </text>
+      <text
+        x="187.5"
+        y="145"
+        textAnchor="middle"
+        fontSize="11.5"
+        fill="#A1AAB4"
+      >
+        {sessionStateText}
+      </text>
       {children}
       <g transform="translate(40 556)">
         <text
           x="147.5"
           y="0"
           textAnchor="middle"
-          fontSize="17"
-          fill="#4E5968"
+          fontSize="18"
+          fill="#47515D"
           fontWeight="600"
         >
           {contextTitle}
@@ -118,7 +139,8 @@ export function BaseScreenLayout({
             y="28"
             textAnchor="middle"
             fontSize="12.5"
-            fill="#8A95A3"
+            fill="#7D8896"
+            fontWeight="500"
           >
             {contextDetail}
           </text>
@@ -132,7 +154,7 @@ export function BaseScreenLayout({
           height="54"
           rx="27"
           fill={accent}
-          opacity="0.18"
+          opacity="0.2"
         />
         <rect
           x="0"
@@ -140,8 +162,8 @@ export function BaseScreenLayout({
           width="260"
           height="54"
           rx="27"
-          fill="rgba(255,255,255,0.78)"
-          stroke="rgba(220,225,231,0.98)"
+          fill="url(#statePrimaryFill)"
+          stroke="rgba(58,64,73,0.1)"
         />
         <text
           x="130"
@@ -149,7 +171,7 @@ export function BaseScreenLayout({
           textAnchor="middle"
           fontSize="14"
           fontWeight="600"
-          fill="#505C6C"
+          fill="#FFFFFF"
         >
           {primaryActionLabel}
         </text>
@@ -160,26 +182,26 @@ export function BaseScreenLayout({
             width="48"
             height="54"
             rx="24"
-            fill="rgba(255,255,255,0.78)"
+            fill="rgba(255,255,255,0.84)"
             stroke="rgba(220,225,231,0.98)"
           />
           <path
             d="M 18 20 H 24 C 27 20 29 22 29 25 V 29 C 29 32 27 34 24 34 H 18 Z"
             fill="none"
-            stroke="#718090"
+            stroke="#697684"
             strokeWidth="1.6"
             strokeLinejoin="round"
           />
           <path
             d="M 29 24 L 34 20 V 34 L 29 30"
             fill="none"
-            stroke="#718090"
+            stroke="#697684"
             strokeWidth="1.6"
             strokeLinejoin="round"
           />
           <path
             d="M 16 18 L 34 36"
-            stroke="#718090"
+            stroke="#697684"
             strokeWidth="1.6"
             strokeLinecap="round"
           />
@@ -190,19 +212,17 @@ export function BaseScreenLayout({
         y="754"
         textAnchor="middle"
         fontSize="13"
-        fill="#8A95A3"
+        fill="#7E8895"
+        fontWeight="500"
       >
         {secondaryActionLabel} · {footerStatus}
       </text>
-      <text
-        x="187.5"
-        y="120"
-        textAnchor="middle"
-        fontSize="12"
-        fill="#A1AAB4"
-      >
-        {sessionStateText}
-      </text>
+      <defs>
+        <linearGradient id="statePrimaryFill" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#2F3740" />
+          <stop offset="100%" stopColor="#1F252C" />
+        </linearGradient>
+      </defs>
     </svg>
   );
 }

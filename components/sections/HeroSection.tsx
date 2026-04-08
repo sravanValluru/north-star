@@ -45,23 +45,23 @@ export function HeroSection() {
     >
       <div
         ref={blobOneRef}
-        className="pointer-events-none absolute left-[-12%] top-[-6%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,rgba(230,199,156,0.78),rgba(230,199,156,0.32)_28%,rgba(230,199,156,0.1)_46%,transparent_68%)] blur-[54px] mix-blend-screen"
+        className="pointer-events-none absolute left-[-14%] top-[-8%] h-[40rem] w-[40rem] rounded-full bg-[radial-gradient(circle,rgba(230,199,156,0.78),rgba(230,199,156,0.38)_24%,rgba(230,199,156,0.14)_42%,transparent_66%)] blur-[44px] mix-blend-screen"
       />
       <div
         ref={blobTwoRef}
-        className="pointer-events-none absolute left-[10%] top-[16%] h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(183,227,214,0.36),rgba(183,227,214,0.14)_34%,transparent_70%)] blur-[58px] mix-blend-screen"
+        className="pointer-events-none absolute left-[8%] top-[18%] h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,rgba(183,227,214,0.42),rgba(183,227,214,0.18)_30%,transparent_66%)] blur-[46px] mix-blend-screen"
       />
       <div
         ref={blobThreeRef}
-        className="pointer-events-none absolute right-[-6%] top-[-4%] h-[42rem] w-[42rem] rounded-full bg-[radial-gradient(circle,rgba(191,215,234,0.82),rgba(191,215,234,0.34)_28%,rgba(191,215,234,0.12)_48%,transparent_70%)] blur-[60px] mix-blend-screen"
+        className="pointer-events-none absolute right-[-8%] top-[-6%] h-[44rem] w-[44rem] rounded-full bg-[radial-gradient(circle,rgba(191,215,234,0.82),rgba(191,215,234,0.38)_24%,rgba(191,215,234,0.14)_44%,transparent_68%)] blur-[46px] mix-blend-screen"
       />
       <div
         ref={blobFourRef}
-        className="pointer-events-none absolute right-[4%] top-[32%] h-[26rem] w-[26rem] rounded-full bg-[radial-gradient(circle,rgba(230,199,156,0.42),rgba(230,199,156,0.14)_40%,transparent_70%)] blur-[56px] mix-blend-screen"
+        className="pointer-events-none absolute right-[4%] top-[34%] h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(230,199,156,0.48),rgba(230,199,156,0.18)_36%,transparent_68%)] blur-[44px] mix-blend-screen"
       />
       <div
         ref={blobFiveRef}
-        className="pointer-events-none absolute left-[28%] top-[46%] h-[22rem] w-[32rem] rounded-full bg-[radial-gradient(circle,rgba(191,215,234,0.3),rgba(191,215,234,0.12)_38%,transparent_74%)] blur-[60px] mix-blend-screen"
+        className="pointer-events-none absolute left-[24%] top-[48%] h-[24rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(191,215,234,0.34),rgba(191,215,234,0.16)_34%,transparent_70%)] blur-[48px] mix-blend-screen"
       />
       <div className="grid gap-14 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
         <div className="max-w-[640px] self-center">

@@ -9,6 +9,7 @@ type ProblemTimelineRefs = {
   trackRef: RefObject<HTMLDivElement | null>;
   phoneRef: RefObject<HTMLDivElement | null>;
   statementRefs: RefObject<HTMLDivElement | null>[];
+  progressRefs: RefObject<HTMLSpanElement | null>[];
   reducedMotion: boolean;
 };
 
@@ -17,6 +18,7 @@ export function useProblemTimeline({
   trackRef,
   phoneRef,
   statementRefs,
+  progressRefs,
   reducedMotion,
 }: ProblemTimelineRefs) {
   useEffect(() => {
@@ -28,22 +30,28 @@ export function useProblemTimeline({
       const statements = statementRefs
         .map((ref) => ref.current)
         .filter((node): node is HTMLDivElement => Boolean(node));
+      const progressItems = progressRefs
+        .map((ref) => ref.current)
+        .filter((node): node is HTMLSpanElement => Boolean(node));
 
       if (statements.length === 0) {
         return;
       }
 
-      gsap.set(statements, { autoAlpha: 0.24, y: 24 });
+      gsap.set(statements, { autoAlpha: 0, y: 28 });
       gsap.set(statements[0], { autoAlpha: 1, y: 0 });
+      gsap.set(progressItems, { autoAlpha: 0.34, color: "#7F8B99" });
+      gsap.set(progressItems[0], { autoAlpha: 1, color: "#E9E5DE" });
 
       if (phoneRef.current) {
-        gsap.set(phoneRef.current, { autoAlpha: 0.6, scale: 0.97 });
+        gsap.set(phoneRef.current, { autoAlpha: 0.84, scale: 1, y: 0 });
       }
 
       if (reducedMotion) {
         gsap.set(statements, { autoAlpha: 1, y: 0 });
+        gsap.set(progressItems, { autoAlpha: 1, color: "#C8D1DB" });
         if (phoneRef.current) {
-          gsap.set(phoneRef.current, { autoAlpha: 0.8, scale: 1 });
+          gsap.set(phoneRef.current, { autoAlpha: 1, scale: 1, y: 0 });
         }
         return;
       }
@@ -64,24 +72,51 @@ export function useProblemTimeline({
 
         statements.forEach((statement, index) => {
           const previous = statements[index - 1];
+          const previousProgress = progressItems[index - 1];
+
+          if (index > 0) {
+            timeline
+              .to(
+                previous,
+                {
+                  autoAlpha: 0,
+                  y: -16,
+                  duration: 0.5,
+                  ease: "power2.out",
+                },
+                "+=0.28",
+              )
+              .to(
+                previousProgress,
+                {
+                  autoAlpha: 0.34,
+                  color: "#7F8B99",
+                  duration: 0.35,
+                  ease: "power2.out",
+                },
+                "<",
+              );
+          }
 
           timeline.to(
             statement,
             {
               autoAlpha: 1,
               y: 0,
-              duration: 0.65,
+              duration: 0.7,
+              ease: "power2.out",
             },
-            index === 0 ? 0 : "+=0.22",
+            index === 0 ? 0 : "<+0.08",
           );
 
-          if (previous) {
+          if (progressItems[index]) {
             timeline.to(
-              previous,
+              progressItems[index],
               {
-                autoAlpha: 0.3,
-                y: -10,
-                duration: 0.55,
+                autoAlpha: 1,
+                color: "#E9E5DE",
+                duration: 0.4,
+                ease: "power2.out",
               },
               "<",
             );
@@ -91,8 +126,9 @@ export function useProblemTimeline({
             timeline.to(
               phoneRef.current,
               {
-                autoAlpha: Math.min(0.88, 0.62 + index * 0.08),
-                scale: 0.97 + index * 0.006,
+                autoAlpha: Math.min(1, 0.84 + index * 0.04),
+                y: 0,
+                scale: 1,
                 duration: 0.55,
               },
               "<",
@@ -103,8 +139,9 @@ export function useProblemTimeline({
 
       mm.add("(max-width: 1023px)", () => {
         gsap.set(statements, { autoAlpha: 1, y: 0 });
+        gsap.set(progressItems, { autoAlpha: 1, color: "#C8D1DB" });
         if (phoneRef.current) {
-          gsap.set(phoneRef.current, { autoAlpha: 0.8, scale: 1 });
+          gsap.set(phoneRef.current, { autoAlpha: 1, scale: 1, y: 0 });
         }
       });
 
@@ -112,5 +149,5 @@ export function useProblemTimeline({
     }, sectionRef);
 
     return () => ctx.revert();
-  }, [phoneRef, reducedMotion, sectionRef, statementRefs, trackRef]);
+  }, [phoneRef, progressRefs, reducedMotion, sectionRef, statementRefs, trackRef]);
 }

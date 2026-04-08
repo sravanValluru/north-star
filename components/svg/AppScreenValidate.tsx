@@ -13,6 +13,7 @@ export function AppScreenValidate() {
       accentGlow="rgba(191,215,234,0.28)"
       sessionState="Cue"
       sessionStateText="Prosody cue surfaced"
+      modeLabel="Mode: Validate"
       primaryActionLabel="Stop session"
       secondaryActionLabel="Mute"
     >
@@ -22,6 +23,8 @@ export function AppScreenValidate() {
         stroke="#D7E7F2"
         halo="rgba(191,215,234,0.2)"
         innerLabel="Cue"
+        iconStroke="#507E9B"
+        labelColor="#6D91A8"
       />
       <CueChip label="VALIDATE" background="#EAF3FA" textColor="#5A8FB5" />
     </BaseScreenLayout>

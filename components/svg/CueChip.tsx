@@ -6,22 +6,23 @@ type CueChipProps = {
 
 export function CueChip({ label, background, textColor }: CueChipProps) {
   return (
-    <g id={`cue-chip-${label.toLowerCase()}`} transform="translate(122 450)">
+    <g id={`cue-chip-${label.toLowerCase()}`} transform="translate(112 450)">
       <rect
         x="0"
         y="0"
-        width="131"
-        height="36"
-        rx="18"
+        width="151"
+        height="38"
+        rx="19"
         fill={background}
-        stroke="rgba(255,255,255,0.75)"
+        stroke="rgba(255,255,255,0.82)"
       />
+      <circle cx="22" cy="19" r="4.5" fill={textColor} opacity="0.9" />
       <text
-        x="65.5"
-        y="23"
+        x="87"
+        y="24"
         textAnchor="middle"
         fontSize="13"
-        fontWeight="500"
+        fontWeight="600"
         fill={textColor}
         letterSpacing="0.08em"
       >

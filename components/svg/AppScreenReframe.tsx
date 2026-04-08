@@ -13,6 +13,7 @@ export function AppScreenReframe() {
       accentGlow="rgba(183,227,214,0.28)"
       sessionState="Cue"
       sessionStateText="Reflective capacity may be reopening"
+      modeLabel="Mode: Reframe"
       primaryActionLabel="Stop session"
       secondaryActionLabel="Mute"
     >
@@ -22,6 +23,8 @@ export function AppScreenReframe() {
         stroke="#D2EADF"
         halo="rgba(183,227,214,0.22)"
         innerLabel="Clear"
+        iconStroke="#3C8C7A"
+        labelColor="#5E9F91"
       />
       <CueChip label="REFRAME" background="#E3F3EE" textColor="#3C8C7A" />
     </BaseScreenLayout>

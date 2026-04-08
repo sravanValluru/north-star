@@ -75,8 +75,8 @@ export function AppScreenReady() {
           y="142"
           textAnchor="middle"
           fontSize="13"
-          fill="#838D97"
-          fontWeight="500"
+          fill="#69737D"
+          fontWeight="600"
         >
           Mode: Demo
         </text>
@@ -109,8 +109,8 @@ export function AppScreenReady() {
         y="470"
         textAnchor="middle"
         fontSize="23"
-        fill="#48515B"
-        fontWeight="500"
+        fill="#49525C"
+        fontWeight="600"
       >
         Tap to start listening
       </text>
@@ -119,9 +119,9 @@ export function AppScreenReady() {
         x="187.5"
         y="516"
         textAnchor="middle"
-        fontSize="12"
-        fill="#7E8893"
-        fontWeight="500"
+        fontSize="12.5"
+        fill="#6E7884"
+        fontWeight="600"
       >
         <tspan x="187.5" dy="0">
           The companion will quietly observe and
@@ -133,7 +133,7 @@ export function AppScreenReady() {
 
       <g transform="translate(145 620)">
         <circle cx="0" cy="0" r="4" fill="#9DA88E" />
-        <text x="14" y="5" fontSize="13" fill="#7E8893" fontWeight="500">
+        <text x="14" y="5" fontSize="13" fill="#707A85" fontWeight="600">
           Connected
         </text>
       </g>
