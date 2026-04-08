@@ -1,0 +1,48 @@
+export const cueStates = [
+  {
+    id: "ready",
+    label: "Ready",
+    headline: "Ready when you are.",
+    subtext: "The system activates only when the therapist chooses.",
+    microcopy: null,
+    accentColor: "#D6D6D6",
+    waveformStyle: "none",
+  },
+  {
+    id: "neutral",
+    label: "Neutral",
+    headline: "Listening without interruption.",
+    subtext: "Most of the time, nothing changes. That is part of the design.",
+    microcopy: null,
+    accentColor: "#B7C9C0",
+    waveformStyle: "rings",
+  },
+  {
+    id: "validate",
+    label: "Validate",
+    headline: "A moment that may need acknowledgment.",
+    subtext:
+      "Sustained changes in vocal intensity may suggest rising emotional significance.",
+    microcopy: "Not a diagnosis. A prompt for attention.",
+    accentColor: "#BFD7EA",
+    waveformStyle: "rings",
+  },
+  {
+    id: "ground",
+    label: "Ground",
+    headline: "When regulation may come first.",
+    subtext: "Sustained activation may reduce reflective capacity.",
+    microcopy: "The system suggests slowing, not interpreting.",
+    accentColor: "#E6C79C",
+    waveformStyle: "slow-rings",
+  },
+  {
+    id: "reframe",
+    label: "Reframe",
+    headline: "When reflection becomes possible again.",
+    subtext: "Stability may return after activation.",
+    microcopy: "A moment for gentle perspective.",
+    accentColor: "#B7E3D6",
+    waveformStyle: "lines",
+  },
+] as const;
