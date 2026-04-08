@@ -9,10 +9,15 @@ const summaryRows = [
 export function AppScreenSummary() {
   return (
     <BaseScreenLayout
-      contextText="Session Summary"
-      bottomText="Post-session reflection"
+      contextTitle="Session Summary"
+      contextDetail="A brief review of surfaced cue moments."
+      footerStatus="Post-session reflection"
       accent="#BFD7EA"
       accentGlow="rgba(191,215,234,0.18)"
+      sessionState="Complete"
+      sessionStateText="Session ended"
+      primaryActionLabel="Export notes"
+      secondaryActionLabel="Mute"
     >
       <g id="summary-block">
         <text

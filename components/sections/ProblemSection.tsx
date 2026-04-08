@@ -32,7 +32,7 @@ export function ProblemSection() {
 
   return (
     <SectionContainer id="problem" ref={sectionRef} className="min-h-screen">
-      <PinnedSection className="rounded-[36px] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.5),rgba(236,242,239,0.46))] p-6 shadow-soft backdrop-blur-[4px] sm:p-8 lg:p-10">
+      <PinnedSection className="rounded-[36px] border border-border bg-[linear-gradient(180deg,rgba(17,22,30,0.78),rgba(14,19,27,0.88))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur-[12px] sm:p-8 lg:p-10">
         <div ref={trackRef} className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div className="grid gap-5">
             {sectionContent.problem.lines.map((line, index) => (

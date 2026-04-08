@@ -8,16 +8,16 @@ export function WhyVoiceSection() {
 
   return (
     <SectionContainer id="why-voice">
-      <div className="rounded-[36px] border border-white/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.62),rgba(238,245,241,0.72)_52%,rgba(238,243,248,0.7))] p-6 shadow-soft backdrop-blur-[4px] sm:p-8 lg:p-10">
+      <div className="rounded-[36px] border border-border bg-[linear-gradient(135deg,rgba(16,22,30,0.82),rgba(20,28,36,0.86)_52%,rgba(17,27,35,0.88))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur-[12px] sm:p-8 lg:p-10">
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div className="max-w-prose">
             <SectionHeadline className="max-w-[15ch]">{section.headline}</SectionHeadline>
             <SectionSubtext>{section.subtext}</SectionSubtext>
-            <div className="mt-8 flex flex-wrap gap-3 text-sm text-[#5F5F5F]">
+            <div className="mt-8 flex flex-wrap gap-3 text-sm text-muted">
               {section.labels.map((label) => (
                 <span
                   key={label}
-                  className="rounded-full bg-[#FCFCFB] px-4 py-2 ring-1 ring-border"
+                  className="rounded-full bg-[rgba(255,255,255,0.04)] px-4 py-2 ring-1 ring-border"
                 >
                   {label}
                 </span>
@@ -29,8 +29,8 @@ export function WhyVoiceSection() {
               ))}
             </div>
           </div>
-          <div className="rounded-[32px] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.72),rgba(238,245,241,0.84))] p-6">
-            <div className="relative flex min-h-[280px] items-center justify-center overflow-hidden rounded-[28px] bg-[radial-gradient(circle_at_center,rgba(191,215,234,0.2),transparent_48%),linear-gradient(180deg,#FCFCFB_0%,#F6F4F1_100%)]">
+          <div className="rounded-[32px] border border-border bg-[linear-gradient(180deg,rgba(18,25,34,0.9),rgba(15,21,29,0.94))] p-6">
+            <div className="relative flex min-h-[280px] items-center justify-center overflow-hidden rounded-[28px] bg-[radial-gradient(circle_at_center,rgba(191,215,234,0.14),transparent_48%),linear-gradient(180deg,rgba(20,26,35,0.98)_0%,rgba(14,19,27,0.98)_100%)]">
               <div className="absolute h-56 w-56 rounded-full border border-neutral/20" />
               <div className="absolute h-72 w-72 rounded-full border border-neutral/10" />
               <svg

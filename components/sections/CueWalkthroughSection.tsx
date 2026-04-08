@@ -31,9 +31,9 @@ export function CueWalkthroughSection() {
 
   return (
     <SectionContainer id="cue-walkthrough" ref={sectionRef}>
-      <div className="rounded-[36px] border border-white/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.62),rgba(239,246,250,0.76)_34%,rgba(247,241,232,0.78)_68%,rgba(236,247,244,0.78))] p-6 shadow-soft backdrop-blur-[4px] sm:p-8 lg:p-10">
+      <div className="rounded-[36px] border border-border bg-[linear-gradient(135deg,rgba(16,22,30,0.84),rgba(18,28,38,0.92)_34%,rgba(29,24,20,0.88)_68%,rgba(15,27,27,0.9))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.32)] backdrop-blur-[12px] sm:p-8 lg:p-10">
         <div className="hidden min-h-[78vh] lg:grid lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-10">
-          <div className="rounded-[32px] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.8),rgba(247,250,251,0.86))] p-6">
+          <div className="rounded-[32px] border border-border bg-[linear-gradient(180deg,rgba(18,25,34,0.92),rgba(14,20,28,0.96))] p-6">
             <div className="mx-auto max-w-[330px]">
               <PhoneMockup>
                 <PhoneScreenStage className="relative">
@@ -77,7 +77,7 @@ export function CueWalkthroughSection() {
           {cueStates.map((state) => (
             <article
               key={state.id}
-              className="rounded-[30px] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(252,252,251,0.94))] p-8"
+              className="rounded-[30px] border border-border bg-[linear-gradient(180deg,rgba(18,25,34,0.88),rgba(14,20,28,0.94))] p-8"
             >
               <div className="mb-8">
                 <PhoneMockup className="max-w-[290px]">

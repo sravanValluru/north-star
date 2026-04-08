@@ -8,7 +8,7 @@ export function RoadmapSection() {
 
   return (
     <SectionContainer id="roadmap">
-      <div className="rounded-[36px] border border-white/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.62),rgba(238,243,248,0.78),rgba(247,241,232,0.72))] p-6 shadow-soft backdrop-blur-[4px] sm:p-8 lg:p-10">
+      <div className="rounded-[36px] border border-border bg-[linear-gradient(135deg,rgba(16,22,30,0.82),rgba(18,27,36,0.88),rgba(28,22,18,0.82))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur-[12px] sm:p-8 lg:p-10">
       <SectionHeadline>{section.headline}</SectionHeadline>
       <div className="mt-8 grid gap-4">
         {section.items.map((item) => (
