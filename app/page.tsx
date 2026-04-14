@@ -1,20 +1,18 @@
 import { PageShell } from "@/components/layout/PageShell";
 import { ClosingSection } from "@/components/sections/ClosingSection";
 import { CueWalkthroughSection } from "@/components/sections/CueWalkthroughSection";
-import { HeroSection } from "@/components/sections/HeroSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { IBSContextSection } from "@/components/sections/IBSContextSection";
-import { ProblemSection } from "@/components/sections/ProblemSection";
+import { IntroSection } from "@/components/sections/IntroSection";
+import { OpeningSequenceSection } from "@/components/sections/OpeningSequenceSection";
 import { RoadmapSection } from "@/components/sections/RoadmapSection";
 import { SafetySection } from "@/components/sections/SafetySection";
-import { WhyVoiceSection } from "@/components/sections/WhyVoiceSection";
 
 export default function HomePage() {
   return (
     <PageShell>
-      <HeroSection />
-      <ProblemSection />
-      <WhyVoiceSection />
+      <IntroSection />
+      <OpeningSequenceSection />
       <HowItWorksSection />
       <CueWalkthroughSection />
       <SafetySection />

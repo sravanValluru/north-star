@@ -1,4 +1,10 @@
 export const sectionContent = {
+  intro: {
+    headline: "Voice-Based Attunement Support in Psychotherapy",
+    subtext:
+      "A restrained exploration of whether subtle vocal pattern shifts can help therapists notice moments that may need closer attention, especially in psychotherapy and IBS-linked care contexts.",
+    microcopy: "Therapist-facing prototype. Attentive by design.",
+  },
   hero: {
     headline: "Attunement is often decided in moments too subtle to name.",
     subtext:
@@ -8,7 +14,7 @@ export const sectionContent = {
   problem: {
     lines: [
       "Therapists hold multiple layers of attention at once.",
-      "Words. Tone. Silence. Meaning. Their own response.",
+      "They are listening to words, tone, silence, and their own response.",
       "Emotional shifts are often brief, indirect, and easy to miss.",
       "Especially when cognitive load is high.",
     ],
@@ -18,19 +24,19 @@ export const sectionContent = {
     subtext: "Not what is said, but how it is said.",
     labels: ["Pitch", "Pacing", "Intensity", "Variability"],
     closingLines: [
-      "These shifts do not define emotion.",
-      "They suggest change.",
+      "Prosody does not diagnose or define emotion.",
+      "It can surface a shift early enough for the therapist to stay with it.",
     ],
   },
   howItWorks: {
-    headline: "A system that notices patterns, not meanings.",
+    headline: "From body state to cue, without pretending to know meaning.",
     steps: [
-      "Client state influences physiology.",
-      "Physiology shapes vocal expression.",
-      "Voice carries detectable patterns.",
-      "Patterns are translated into minimal cues.",
+      "State shifts tend to appear in the body first.",
+      "Breath, pace, and tension shape the voice that follows.",
+      "Those prosodic changes create a detectable signal.",
+      "The signal becomes a minimal cue for the therapist to weigh.",
     ],
-    closingLine: "The therapist remains the interpreter.",
+    closingLine: "Interpretation stays with the therapist.",
   },
   safety: {
     headline: "Designed with restraint.",

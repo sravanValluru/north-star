@@ -8,6 +8,8 @@ type ProblemTimelineRefs = {
   sectionRef: RefObject<HTMLElement | null>;
   trackRef: RefObject<HTMLDivElement | null>;
   phoneRef: RefObject<HTMLDivElement | null>;
+  readyScreenRef: RefObject<HTMLDivElement | null>;
+  neutralScreenRef: RefObject<HTMLDivElement | null>;
   statementRefs: RefObject<HTMLDivElement | null>[];
   progressRefs: RefObject<HTMLSpanElement | null>[];
   reducedMotion: boolean;
@@ -17,6 +19,8 @@ export function useProblemTimeline({
   sectionRef,
   trackRef,
   phoneRef,
+  readyScreenRef,
+  neutralScreenRef,
   statementRefs,
   progressRefs,
   reducedMotion,
@@ -33,6 +37,8 @@ export function useProblemTimeline({
       const progressItems = progressRefs
         .map((ref) => ref.current)
         .filter((node): node is HTMLSpanElement => Boolean(node));
+      const readyScreen = readyScreenRef.current;
+      const neutralScreen = neutralScreenRef.current;
 
       if (statements.length === 0) {
         return;
@@ -42,6 +48,10 @@ export function useProblemTimeline({
       gsap.set(statements[0], { autoAlpha: 1, y: 0 });
       gsap.set(progressItems, { autoAlpha: 0.34, color: "#7F8B99" });
       gsap.set(progressItems[0], { autoAlpha: 1, color: "#E9E5DE" });
+      if (readyScreen && neutralScreen) {
+        gsap.set(readyScreen, { autoAlpha: 1 });
+        gsap.set(neutralScreen, { autoAlpha: 0 });
+      }
 
       if (phoneRef.current) {
         gsap.set(phoneRef.current, { autoAlpha: 0.84, scale: 1, y: 0 });
@@ -50,6 +60,10 @@ export function useProblemTimeline({
       if (reducedMotion) {
         gsap.set(statements, { autoAlpha: 1, y: 0 });
         gsap.set(progressItems, { autoAlpha: 1, color: "#C8D1DB" });
+        if (readyScreen && neutralScreen) {
+          gsap.set(readyScreen, { autoAlpha: 0 });
+          gsap.set(neutralScreen, { autoAlpha: 1 });
+        }
         if (phoneRef.current) {
           gsap.set(phoneRef.current, { autoAlpha: 1, scale: 1, y: 0 });
         }
@@ -69,6 +83,28 @@ export function useProblemTimeline({
             anticipatePin: 1,
           },
         });
+
+        if (readyScreen && neutralScreen) {
+          timeline
+            .to(
+              readyScreen,
+              {
+                autoAlpha: 0,
+                duration: 0.45,
+                ease: "power2.out",
+              },
+              0.08,
+            )
+            .to(
+              neutralScreen,
+              {
+                autoAlpha: 1,
+                duration: 0.55,
+                ease: "power2.out",
+              },
+              0.1,
+            );
+        }
 
         statements.forEach((statement, index) => {
           const previous = statements[index - 1];
@@ -149,5 +185,14 @@ export function useProblemTimeline({
     }, sectionRef);
 
     return () => ctx.revert();
-  }, [phoneRef, progressRefs, reducedMotion, sectionRef, statementRefs, trackRef]);
+  }, [
+    neutralScreenRef,
+    phoneRef,
+    progressRefs,
+    readyScreenRef,
+    reducedMotion,
+    sectionRef,
+    statementRefs,
+    trackRef,
+  ]);
 }

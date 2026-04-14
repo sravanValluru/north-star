@@ -1,32 +1,22 @@
-import { BaseScreenLayout } from "@/components/svg/BaseScreenLayout";
-import { CueChip } from "@/components/svg/CueChip";
-import { MicCircle } from "@/components/svg/MicCircle";
-import { WaveformLayer } from "@/components/svg/WaveformLayer";
+import { AppSessionScreen } from "@/components/svg/AppSessionScreen";
 
 export function AppScreenGround() {
   return (
-    <BaseScreenLayout
-      contextTitle="Regulation may be needed first"
-      contextDetail="The system suggests slowing before interpretation."
-      footerStatus="Sustained activation detected"
-      accent="#E6C79C"
-      accentGlow="rgba(230,199,156,0.3)"
-      sessionState="Cue"
-      sessionStateText="Activation remains elevated"
-      modeLabel="Mode: Ground"
-      primaryActionLabel="Stop session"
-      secondaryActionLabel="Mute"
-    >
-      <WaveformLayer variant="slow-rings" color="#E6C79C" opacity={0.36} />
-      <MicCircle
-        fill="#FAF3E8"
-        stroke="#EBD6B8"
-        halo="rgba(230,199,156,0.22)"
-        innerLabel="Steady"
-        iconStroke="#9E7B3D"
-        labelColor="#A27B42"
-      />
-      <CueChip label="GROUND" background="#F6E9D7" textColor="#A6792D" />
-    </BaseScreenLayout>
+    <AppSessionScreen
+      ariaLabel="Ground cue screen modeled after the live app validate layout with a warmer alert tone."
+      backgroundStart="#FBF7EF"
+      backgroundEnd="#F4EBDD"
+      ambientColor="rgba(230,199,156,0.38)"
+      accentColor="#B9A48A"
+      title="Listening..."
+      subtitle="Tap mic to mute"
+      description="Observing vocal patterns for empathy timing"
+      timer="3:39 remaining"
+      cueLabel="GROUND"
+      cueText="Next cue in 12s"
+      cueTextColor="#A47A39"
+      cueBorderColor="#C9A86A"
+      primaryButtonLabel="Stop Listening"
+    />
   );
 }

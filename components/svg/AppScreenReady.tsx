@@ -1,3 +1,5 @@
+import { SessionMicIcon } from "@/components/svg/SessionMicIcon";
+
 export function AppScreenReady() {
   return (
     <svg
@@ -30,23 +32,23 @@ export function AppScreenReady() {
       <rect width="375" height="812" fill="url(#readyGlowWarm)" />
       <rect width="375" height="812" fill="url(#readyGlowCool)" />
 
-      <g transform="translate(111 78)">
+      <g transform="translate(110 82)">
         <rect
           x="0"
           y="0"
-          width="153"
-          height="44"
-          rx="22"
-          fill="rgba(255,255,255,0.84)"
-          stroke="rgba(229,225,217,0.95)"
+          width="155"
+          height="42"
+          rx="21"
+          fill="rgba(255,255,255,0.76)"
+          stroke="rgba(255,255,255,0.72)"
         />
         <rect
-          x="6"
+          x="7"
           y="5"
           width="68"
-          height="34"
-          rx="17"
-          fill="#232A31"
+          height="32"
+          rx="16"
+          fill="#98A18A"
         />
         <text
           x="40"
@@ -60,11 +62,11 @@ export function AppScreenReady() {
         </text>
         <text
           x="113"
-          y="27"
+          y="25"
           textAnchor="middle"
           fontSize="13"
           fontWeight="600"
-          fill="#6F7780"
+          fill="#7D848C"
         >
           Normal
         </text>
@@ -72,123 +74,104 @@ export function AppScreenReady() {
 
         <text
           x="187.5"
-          y="142"
+          y="145"
           textAnchor="middle"
-          fontSize="13"
-          fill="#69737D"
+          fontSize="12.5"
+          fill="#99A0A7"
           fontWeight="600"
         >
           Mode: Demo
         </text>
 
-      <g transform="translate(187.5 322)">
-        <circle cx="0" cy="0" r="108" fill="rgba(255,255,255,0.56)" />
-        <circle cx="0" cy="0" r="92" fill="rgba(255,255,255,0.42)" />
-        <circle cx="0" cy="0" r="76" fill="url(#micCenterFill)" />
-        <circle
-          cx="0"
-          cy="0"
-          r="76"
-          fill="none"
-          stroke="rgba(219,211,199,0.95)"
-        />
-        <g transform="translate(0 -4)">
-          <circle cx="0" cy="0" r="52" fill="url(#micInnerGlow)" opacity="0.58" />
-          <circle cx="0" cy="0" r="44" fill="rgba(255,255,255,0.34)" />
-          <g fill="none" stroke="#2F3740">
-            <rect x="-12" y="-24" width="24" height="38" rx="12" strokeWidth="2.6" />
-            <path d="M -17 0 A 17 17 0 0 0 17 0" strokeWidth="2.6" />
-            <path d="M 0 14 V 29" strokeWidth="2.6" />
-            <path d="M -12 29 H 12" strokeWidth="2.6" />
-          </g>
+      <g transform="translate(187.5 320)">
+        <circle cx="0" cy="0" r="84" fill="rgba(255,255,255,0.28)" />
+        <circle cx="0" cy="0" r="66" fill="#AEB59E" opacity="0.9" />
+        <circle cx="0" cy="0" r="68" fill="none" stroke="rgba(255,255,255,0.88)" strokeWidth="2.2" />
+        <circle cx="0" cy="0" r="88" fill="none" stroke="rgba(219,211,199,0.26)" strokeWidth="1" />
+        <circle cx="0" cy="0" r="106" fill="none" stroke="rgba(219,211,199,0.14)" strokeWidth="0.9" />
+        <g transform="translate(0 0)">
+          <circle cx="0" cy="0" r="46" fill="url(#micInnerGlow)" opacity="0.28" />
+          <SessionMicIcon />
         </g>
       </g>
 
       <text
         x="187.5"
-        y="470"
+        y="458"
         textAnchor="middle"
-        fontSize="23"
-        fill="#49525C"
-        fontWeight="600"
+        fontSize="18"
+        fill="#5E666E"
+        fontWeight="500"
       >
-        Tap to start listening
+        Listening...
       </text>
 
       <text
         x="187.5"
-        y="516"
+        y="491"
         textAnchor="middle"
         fontSize="12.5"
-        fill="#6E7884"
+        fill="#788089"
         fontWeight="600"
       >
-        <tspan x="187.5" dy="0">
-          The companion will quietly observe and
-        </tspan>
-        <tspan x="187.5" dy="22">
-          provide gentle cues when helpful
-        </tspan>
+        Tap mic to mute
       </text>
 
-      <g transform="translate(145 620)">
-        <circle cx="0" cy="0" r="4" fill="#9DA88E" />
-        <text x="14" y="5" fontSize="13" fill="#707A85" fontWeight="600">
-          Connected
-        </text>
-      </g>
+      <text
+        x="187.5"
+        y="554"
+        textAnchor="middle"
+        fontSize="13.5"
+        fill="#9AA0A7"
+        fontWeight="500"
+      >
+        Observing vocal patterns for empathy timing
+      </text>
 
-      <g transform="translate(34 690)">
+      <text
+        x="187.5"
+        y="620"
+        textAnchor="middle"
+        fontSize="14"
+        fill="#727982"
+        fontWeight="600"
+      >
+        4:46 remaining
+      </text>
+
+      <g transform="translate(105 720)">
         <rect
           x="0"
           y="0"
-          width="255"
-          height="56"
-          rx="28"
-          fill="url(#startButtonFill)"
-          stroke="rgba(58,64,73,0.12)"
+          width="165"
+          height="44"
+          rx="22"
+          fill="rgba(255,255,255,0.84)"
         />
         <text
-          x="127.5"
-          y="34"
+          x="82.5"
+          y="28"
           textAnchor="middle"
           fontSize="14"
           fontWeight="600"
-          fill="#FFFFFF"
+          fill="#5C646D"
         >
-          Start session
+          Stop Listening
         </text>
-        <g transform="translate(269 0)">
-          <rect
-            x="0"
-            y="0"
-            width="56"
-            height="56"
-            rx="28"
-            fill="rgba(255,255,255,0.84)"
-            stroke="rgba(228,223,214,0.98)"
-          />
-          <path
-            d="M 20 21 H 27 C 30 21 32 23 32 26 V 30 C 32 33 30 35 27 35 H 20 Z"
-            fill="none"
-            stroke="#707D89"
-            strokeWidth="1.8"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M 32 25 L 38 21 V 35 L 32 31"
-            fill="none"
-            stroke="#707D89"
-            strokeWidth="1.8"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M 18 19 L 38 37"
-            stroke="#707D89"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-          />
-        </g>
+      </g>
+
+      <g transform="translate(98 790)">
+        <circle cx="0" cy="0" r="4" fill="#98A18A" />
+        <text x="13" y="5" fontSize="13" fill="#97A0A7" fontWeight="500">
+          Connected
+        </text>
+        <text x="85" y="5" fontSize="13" fill="#C5CCD1" fontWeight="500">
+          |
+        </text>
+        <circle cx="105" cy="0" r="4" fill="#98A18A" />
+        <text x="118" y="5" fontSize="13" fill="#97A0A7" fontWeight="500">
+          Audio Analysis Active
+        </text>
       </g>
 
       <defs>
@@ -197,14 +180,6 @@ export function AppScreenReady() {
           <stop offset="60%" stopColor="rgba(230,199,156,0.08)" />
           <stop offset="100%" stopColor="rgba(230,199,156,0)" />
         </radialGradient>
-        <linearGradient id="micCenterFill" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#FFFDFC" />
-          <stop offset="100%" stopColor="#F4EFE7" />
-        </linearGradient>
-        <linearGradient id="startButtonFill" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#2F3740" />
-          <stop offset="100%" stopColor="#1F252C" />
-        </linearGradient>
       </defs>
     </svg>
   );

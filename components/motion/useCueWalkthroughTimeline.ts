@@ -6,6 +6,7 @@ import { gsap } from "@/lib/gsap";
 
 type CueWalkthroughTimelineArgs = {
   sectionRef: RefObject<HTMLElement | null>;
+  progressRefs: RefObject<HTMLSpanElement | null>[];
   screenRefs: RefObject<HTMLDivElement | null>[];
   textRefs: RefObject<HTMLDivElement | null>[];
   reducedMotion: boolean;
@@ -13,6 +14,7 @@ type CueWalkthroughTimelineArgs = {
 
 export function useCueWalkthroughTimeline({
   sectionRef,
+  progressRefs,
   screenRefs,
   textRefs,
   reducedMotion,
@@ -29,11 +31,28 @@ export function useCueWalkthroughTimeline({
       const texts = textRefs
         .map((ref) => ref.current)
         .filter((node): node is HTMLDivElement => Boolean(node));
+      const progressItems = progressRefs
+        .map((ref) => ref.current)
+        .filter((node): node is HTMLSpanElement => Boolean(node));
+
+      const setProgressState = (activeIndex: number) => {
+        progressItems.forEach((item, index) => {
+          gsap.to(item, {
+            color: index <= activeIndex ? "#E2E8EF" : "#7F8B99",
+            opacity: index <= activeIndex ? 1 : 0.56,
+            duration: 0.28,
+            overwrite: true,
+            ease: "power2.out",
+          });
+        });
+      };
 
       gsap.set(screens, { autoAlpha: 0 });
       gsap.set(texts, { autoAlpha: 0, y: 24 });
+      gsap.set(progressItems, { opacity: 0.56, color: "#7F8B99" });
       gsap.set([screens[0], texts[0]], { autoAlpha: 1 });
       gsap.set(texts[0], { y: 0 });
+      setProgressState(0);
 
       if (reducedMotion) {
         return;
@@ -102,6 +121,8 @@ export function useCueWalkthroughTimeline({
               },
               "<+0.08",
             );
+
+          timeline.call(() => setProgressState(index), undefined, ">");
         }
       });
 

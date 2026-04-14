@@ -15,6 +15,8 @@ export function ProblemSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const phoneRef = useRef<HTMLDivElement | null>(null);
+  const readyScreenRef = useRef<HTMLDivElement | null>(null);
+  const neutralScreenRef = useRef<HTMLDivElement | null>(null);
   const statementRefs = useMemo(
     () =>
       sectionContent.problem.lines.map(() => createRef<HTMLDivElement>()),
@@ -31,15 +33,21 @@ export function ProblemSection() {
     sectionRef,
     trackRef,
     phoneRef,
+    readyScreenRef,
+    neutralScreenRef,
     statementRefs,
     progressRefs,
     reducedMotion,
   });
 
   return (
-    <SectionContainer id="problem" ref={sectionRef} className="min-h-screen">
-      <PinnedSection className="rounded-[36px] border border-border bg-[linear-gradient(180deg,rgba(17,22,30,0.78),rgba(14,19,27,0.88))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur-[12px] sm:p-8 lg:p-10">
-        <div ref={trackRef} className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+    <SectionContainer
+      id="problem"
+      ref={sectionRef}
+      className="min-h-screen pb-section pt-0 lg:-mt-[14vh] lg:pt-0"
+    >
+      <PinnedSection className="rounded-[36px] bg-[linear-gradient(180deg,rgba(17,22,30,0.18),rgba(14,19,27,0.28))] p-6 sm:p-8 lg:p-10">
+        <div ref={trackRef} className="grid gap-8 lg:min-h-[78vh] lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div className="flex flex-col justify-center">
             <div className="mb-8 flex items-center justify-between">
               <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#909CAA]">
@@ -108,9 +116,14 @@ export function ProblemSection() {
             </div>
           </div>
           <div ref={phoneRef} className="hidden lg:block">
-            <PhoneMockup className="max-w-[350px] opacity-[0.9]">
-              <PhoneScreenStage>
-                <PhoneAppScreen state="neutral" />
+            <PhoneMockup className="max-w-[394px] lg:translate-y-2 before:absolute before:inset-0 before:-z-10 before:rounded-[50px] before:bg-[radial-gradient(circle_at_20%_20%,rgba(191,215,234,0.18),transparent_40%),radial-gradient(circle_at_80%_75%,rgba(183,201,192,0.18),transparent_44%)]">
+              <PhoneScreenStage className="relative">
+                <div ref={readyScreenRef} className="absolute inset-0">
+                  <PhoneAppScreen state="ready" />
+                </div>
+                <div ref={neutralScreenRef} className="absolute inset-0">
+                  <PhoneAppScreen state="neutral" />
+                </div>
               </PhoneScreenStage>
             </PhoneMockup>
           </div>

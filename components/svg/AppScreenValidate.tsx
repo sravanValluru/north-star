@@ -1,32 +1,22 @@
-import { BaseScreenLayout } from "@/components/svg/BaseScreenLayout";
-import { CueChip } from "@/components/svg/CueChip";
-import { MicCircle } from "@/components/svg/MicCircle";
-import { WaveformLayer } from "@/components/svg/WaveformLayer";
+import { AppSessionScreen } from "@/components/svg/AppSessionScreen";
 
 export function AppScreenValidate() {
   return (
-    <BaseScreenLayout
-      contextTitle="A moment that may need acknowledgment"
-      contextDetail="Sustained vocal intensity may suggest emotional significance."
-      footerStatus="Sustained vocal intensity change detected"
-      accent="#BFD7EA"
-      accentGlow="rgba(191,215,234,0.28)"
-      sessionState="Cue"
-      sessionStateText="Prosody cue surfaced"
-      modeLabel="Mode: Validate"
-      primaryActionLabel="Stop session"
-      secondaryActionLabel="Mute"
-    >
-      <WaveformLayer variant="rings" color="#BFD7EA" opacity={0.34} />
-      <MicCircle
-        fill="#EEF6FB"
-        stroke="#D7E7F2"
-        halo="rgba(191,215,234,0.2)"
-        innerLabel="Cue"
-        iconStroke="#507E9B"
-        labelColor="#6D91A8"
-      />
-      <CueChip label="VALIDATE" background="#EAF3FA" textColor="#5A8FB5" />
-    </BaseScreenLayout>
+    <AppSessionScreen
+      ariaLabel="Validate cue screen modeled after the live app validate state."
+      backgroundStart="#F2F8FC"
+      backgroundEnd="#E4F0F8"
+      ambientColor="rgba(159,203,233,0.36)"
+      accentColor="#7FA7BE"
+      title="Listening..."
+      subtitle="Tap mic to mute"
+      description="Observing vocal patterns for empathy timing"
+      timer="3:43 remaining"
+      cueLabel="VALIDATE"
+      cueText="Next cue in 10s"
+      cueTextColor="#6E98B8"
+      cueBorderColor="#86AECB"
+      primaryButtonLabel="Stop Listening"
+    />
   );
 }
