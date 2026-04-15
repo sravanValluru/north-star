@@ -14,7 +14,7 @@ export const SectionContainer = forwardRef<HTMLElement, SectionContainerProps>(
         ref={ref}
         id={id}
         className={cn(
-          "relative px-6 py-section sm:px-10 lg:px-16",
+          "relative scroll-mt-8 px-6 py-section sm:scroll-mt-10 sm:px-10 lg:scroll-mt-12 lg:px-16",
           className,
         )}
       >

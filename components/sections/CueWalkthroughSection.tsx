@@ -35,9 +35,13 @@ export function CueWalkthroughSection() {
   });
 
   return (
-    <SectionContainer id="cue-walkthrough" ref={sectionRef}>
+    <SectionContainer
+      id="cue-walkthrough"
+      ref={sectionRef}
+      className="pt-0 pb-8 sm:pt-2 sm:pb-10 lg:pt-0 lg:pb-12"
+    >
       <div className="rounded-[36px] border border-border bg-[linear-gradient(135deg,rgba(16,22,30,0.84),rgba(18,28,38,0.92)_34%,rgba(29,24,20,0.88)_68%,rgba(15,27,27,0.9))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.32)] backdrop-blur-[12px] sm:p-8 lg:p-10">
-        <div className="hidden lg:grid lg:min-h-[78vh] lg:grid-rows-[auto_1fr] lg:gap-10">
+        <div className="hidden lg:grid lg:min-h-[82vh] lg:grid-rows-[auto_1fr] lg:gap-8">
           <div className="flex items-center justify-between">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#909CAA]">
               Cue Walkthrough

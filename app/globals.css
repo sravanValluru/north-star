@@ -163,6 +163,18 @@ h4 {
   }
 }
 
+@keyframes gentleBob {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.82;
+  }
+  50% {
+    transform: translate3d(0, 4px, 0);
+    opacity: 1;
+  }
+}
+
 .ambient-orb {
   animation: ambientFloat 16s ease-in-out infinite;
 }
@@ -190,4 +202,8 @@ h4 {
   animation: ambientMorphC 13s ease-in-out infinite;
   animation-delay: -4s;
   will-change: transform, opacity;
+}
+
+.animate-gentle-bob {
+  animation: gentleBob 2.8s ease-in-out infinite;
 }
