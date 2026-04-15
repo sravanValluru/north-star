@@ -140,7 +140,7 @@ export function SiteChrome() {
       </header>
 
       <aside className="pointer-events-none fixed left-6 top-1/2 z-40 hidden -translate-y-1/2 xl:block">
-        <div className="group/nav pointer-events-auto relative flex w-[82px] flex-col gap-3 rounded-[34px] border border-white/[0.1] bg-[linear-gradient(180deg,rgba(21,27,36,0.8),rgba(10,14,20,0.9))] px-3 py-5 shadow-[0_24px_68px_rgba(0,0,0,0.28),0_0_0_1px_rgba(255,255,255,0.018)] backdrop-blur-[20px] transition-[width,box-shadow,background,border-color] duration-300 ease-out hover:w-[220px] hover:border-white/[0.13] hover:bg-[linear-gradient(180deg,rgba(22,28,37,0.86),rgba(10,14,20,0.93))] hover:shadow-[0_30px_90px_rgba(0,0,0,0.34)] focus-within:w-[220px] before:pointer-events-none before:absolute before:inset-[1px] before:rounded-[33px] before:border before:border-white/[0.045] before:content-['']">
+        <div className="group/nav pointer-events-auto relative flex w-[82px] flex-col gap-3 rounded-[34px] border border-[#D7E0E9]/[0.13] bg-[linear-gradient(180deg,rgba(23,29,38,0.8),rgba(10,14,20,0.9))] px-3 py-5 shadow-[0_24px_68px_rgba(0,0,0,0.28),0_0_0_1px_rgba(255,255,255,0.018)] backdrop-blur-[20px] transition-[width,box-shadow,background,border-color] duration-300 ease-out hover:w-[220px] hover:border-[#E2EAF2]/[0.17] hover:bg-[linear-gradient(180deg,rgba(24,30,39,0.86),rgba(10,14,20,0.93))] hover:shadow-[0_30px_90px_rgba(0,0,0,0.34)] focus-within:w-[220px] before:pointer-events-none before:absolute before:inset-[1px] before:rounded-[33px] before:border before:border-white/[0.05] before:content-['']">
           <div className="pointer-events-none absolute inset-y-[14px] left-1/2 w-px -translate-x-1/2 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02)_12%,rgba(255,255,255,0.02)_88%,rgba(255,255,255,0.08))] opacity-60 group-hover/nav:opacity-0 group-focus-within/nav:opacity-0" />
           <nav className="relative z-[1] flex flex-col gap-2">
             {navItems.map((item, index) => {
@@ -182,13 +182,13 @@ export function SiteChrome() {
       <button
         type="button"
         onClick={scrollDownOneViewport}
-        className={`group fixed bottom-8 left-1/2 z-30 inline-flex -translate-x-1/2 items-center gap-3 rounded-full border border-white/[0.09] bg-[linear-gradient(180deg,rgba(18,24,32,0.74),rgba(10,14,20,0.88))] px-5 py-2.5 text-[11px] uppercase tracking-[0.28em] text-[#CDD5DE] shadow-[0_20px_50px_rgba(0,0,0,0.24)] backdrop-blur-[18px] before:pointer-events-none before:absolute before:inset-[1px] before:rounded-full before:border before:border-white/[0.05] before:content-[''] transition duration-300 ${
+        className={`group fixed bottom-8 left-1/2 z-30 inline-flex -translate-x-1/2 items-center gap-3 rounded-full border border-[#D7E0E9]/[0.12] bg-[linear-gradient(180deg,rgba(23,29,38,0.76),rgba(10,14,20,0.88))] px-5 py-2.5 text-[11px] uppercase tracking-[0.28em] text-[#D3DCE5] shadow-[0_20px_50px_rgba(0,0,0,0.24)] backdrop-blur-[18px] before:pointer-events-none before:absolute before:inset-[1px] before:rounded-full before:border before:border-white/[0.06] before:content-[''] transition duration-300 ${
           showScrollCue ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
         }`}
         aria-label="Scroll down to continue"
       >
         <span className="relative z-[1]">Scroll More</span>
-        <span className="relative z-[1] flex h-6 w-6 items-center justify-center rounded-full border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))]">
+        <span className="relative z-[1] flex h-6 w-6 items-center justify-center rounded-full border border-[#D7E0E9]/[0.14] bg-[linear-gradient(180deg,rgba(255,255,255,0.09),rgba(255,255,255,0.03))]">
           <svg
             className="animate-gentle-bob"
             width="12"
